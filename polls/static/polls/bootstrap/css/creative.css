@@ -11,7 +11,7 @@ body {
 hr {
   max-width: 50px;
   border-width: 3px;
-  border-color: #8CC084;
+  border-color: #38d786;
 }
 
 hr.light {
@@ -35,15 +35,15 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Lora', 'Optima', sans-serif;
 }
 
 .bg-primary {
-  background-color: #8CC084 !important;
+  background-color: #fff !important;
 }
 
 .bg-dark {
-  background-color: #212529 !important;
+  background-color: #8CC084 !important;
 }
 
 .text-faded {
@@ -92,7 +92,7 @@ img::-moz-selection {
 #mainNav .navbar-brand {
   font-weight: 700;
   text-transform: uppercase;
-  color: #8CC084;
+  color: #38d786;
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 
@@ -105,7 +105,7 @@ img::-moz-selection {
   font-size: .9rem;
   font-weight: 700;
   text-transform: uppercase;
-  color: #212529;
+  color: #38d786;
 }
 
 #mainNav .navbar-nav > li.nav-item > a.nav-link:hover,
@@ -169,7 +169,7 @@ img::-moz-selection {
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 56px);
-  background-image: url("../img/header.jpg");
+  background-image: url("../img/racheljimmy1.jpg");
   background-position: center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -177,18 +177,27 @@ header.masthead {
   background-size: cover;
 }
 
-header.masthead hr {
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-
 header.masthead h1 {
   font-size: 2rem;
+  margin-top: 50%;
+  font-style: italic;
+  text-shadow:
+    -1px -1px 0 #888,
+    1px -1px 0 #888,
+    -1px 1px 0 #888,
+    1px 1px 0 #888;  
 }
 
 header.masthead p {
-  font-weight: 300;
+  font-weight: 400;
 }
+
+/*header.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}*/
 
 @media (min-width: 768px) {
   header.masthead p {
@@ -214,6 +223,22 @@ header.masthead p {
   }
 }
 
+.event-section {
+  height: 100vh;
+}
+
+.event-container {
+  padding-right: 0;
+}
+
+#event-top{
+  height: 75vh;
+}
+
+#event-bottom{
+  height: 16vh;
+}
+
 .service-box {
   max-width: 400px;
 }
@@ -234,7 +259,7 @@ header.masthead p {
   text-align: center;
   opacity: 0;
   color: #fff;
-  background: #8CC084;
+  background: #38d786;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   transition: all 0.2s;
@@ -282,7 +307,23 @@ header.masthead p {
 }
 
 .text-primary {
+  color: #000 !important;
+}
+
+.subtle-link {
+  color: #000 !important;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.subtle-link:hover {
   color: #8CC084 !important;
+  text-decoration: none;
+}
+
+.ceremony-text {
+  width: 240px;
 }
 
 .btn {
@@ -304,9 +345,76 @@ header.masthead p {
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
   color: #fff;
-  background-color: #ee4b28 !important;
+  background-color: #BAD9B5 !important;
 }
 
 .btn-primary:active, .btn-primary:focus {
   box-shadow: 0 0 0 0.2rem rgba(240, 95, 64, 0.5) !important;
+}
+
+.tab-content.panels-faq {
+  padding: 0;
+  border: 0;
+}
+
+.panel.panel-help {
+  box-shadow: 0 1px 5px rgba(85, 85, 85, 0.15);
+  padding-bottom: 0;
+  border-radius: 2px;
+  overflow: hidden;
+  background-color: #fff;
+  margin: 0 0 16px;
+  a[href^="#"],
+  a[href^="#"]:hover,
+  a[href^="#"]:focus {
+    outline: none;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .panel-heading {
+    background-color: #f6f6f6;
+    padding: 0 16px;
+    line-height: 48px;
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+    color: rgba(0,0,0,.87);
+    h2 {      
+      margin: 0;
+      padding: 14px 0 14px;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 20px;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+  }
+  .panel-body {
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    border-radius: 2px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    margin-top: 0;
+    p {
+      margin: 0 0 16px;
+      &:last-of-type {
+        margin: 0;
+      }
+    }
+  }
+}
+
+.panel-heading .accordion-toggle h4:after {
+    /* symbol for "opening" panels */
+    font-family: "FontAwesome";  
+    content: "\f056";    
+    float: right;                
+    overflow: no-display;
+}
+.panel-heading .accordion-toggle.collapsed h4:after {
+    /* symbol for "collapsed" panels */
+    content: "\f055";    
+}
+a.accordion-toggle{
+    text-decoration: none;
 }

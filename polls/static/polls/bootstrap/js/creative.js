@@ -3,17 +3,38 @@
 
   // Smooth scrolling using jQuery easing
   $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
-    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+      && location.hostname == this.hostname) {
       var target = $(this.hash);
+      var hash = this.hash;
       target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
       if (target.length) {
         $('html, body').animate({
-          scrollTop: (target.offset().top - 57)
+          scrollTop: (target.offset().top - 54)
         }, 1000, "easeInOutExpo");
         return false;
       }
     }
   });
+
+  // changes url but has a jump
+  // $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
+  //   if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+  //     && location.hostname == this.hostname) {
+  //     var target = $(this.hash);
+  //     var hash = this.hash;
+  //     target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+  //     if (target.length) {
+  //       $('html, body').animate({
+  //         scrollTop: (target.offset().top - 54)
+  //       }, 1000, "easeInOutExpo", function (){
+  //           location.hash = hash;
+  //       });
+  //       return false;
+  //     }
+  //   }
+  // });
+
 
   // Closes responsive menu when a scroll trigger link is clicked
   $('.js-scroll-trigger').click(function() {
@@ -71,5 +92,12 @@
       tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
     }
   });
+
+  $('.collapse').on('shown.bs.collapse', function(){
+    $(this).parent().find(".glyphicon-plus").removeClass("glyphicon-plus").addClass("glyphicon-minus");
+    }).on('hidden.bs.collapse', function(){
+      $(this).parent().find(".glyphicon-minus").removeClass("glyphicon-minus").addClass("glyphicon-plus");
+  });
+
 
 })(jQuery); // End of use strict
