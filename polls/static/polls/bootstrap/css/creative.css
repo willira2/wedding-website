@@ -357,6 +357,10 @@ header.masthead p {
   border: 0;
 }
 
+#faq {
+  overflow: auto;
+}
+
 .panel.panel-help {
   box-shadow: 0 1px 5px rgba(85, 85, 85, 0.15);
   padding-bottom: 0;
