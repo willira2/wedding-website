@@ -166,6 +166,12 @@ img::-moz-selection {
   }
 }
 
+#rsvp-header{
+  padding-top: 3rem;
+  height: 20vh;
+  background-color: #fff
+}
+
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 56px);

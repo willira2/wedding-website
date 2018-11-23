@@ -22,3 +22,20 @@ class Choice(models.Model):
 
     def __str__(self):
         return self.choice_text
+
+class Party(models.Model):
+	name = models.CharField(max_length=50)
+
+	def __str__(self):
+		return self.name
+		
+
+class Invitation(models.Model):
+	first_name = models.CharField(max_length=50)
+	last_name = models.CharField(max_length=50)
+	status = models.IntegerField(default=0)
+	party = models.ForeignKey(Party, on_delete=models.CASCADE)
+
+	def __str__(self):
+		return u'%s %s' % (self.first_name, self.last_name)
+		
