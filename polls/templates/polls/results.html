@@ -1,13 +1,65 @@
-{% load static %}
+{% if results|length %}
+    <div class="col-lg-8 col-offset-2 mx-auto text-center">
+        <h4 class="mb-4">Please select a response for each member of your party.</h4>
+        <form action="/submit-rsvp/" method="POST" id="rsvp-form">
+    	    {% csrf_token %}
+    	    {% for r in results %}
+            <div class="form-group">
+                <input type="hidden" value={{ r.pk }} id="guestId" name="guestId">
+                <label class="control-label col-md-5 text-left">{{ r.first_name }} {{ r.last_name }}</label>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-light">
+                    <input type="radio" name="rsvp_choice-{{ r.pk }}" id="rsvpRadio1" autocomplete="off" value="Yes"> Attending
+                  </label>
+                  <label class="btn btn-light">
+                    <input type="radio" name="rsvp_choice-{{ r.pk }}" id="rsvpRadio2" autocomplete="off" value="No"> Not Attending
+                  </label>
+                </div>
+            </div>
+    	    {% endfor %}
+    	    <span class="input-group-btn">
+                <button class="btn btn-primary btn-lg" type="button" id="submitRsvpButton"><i id="submitButtonIcon"></i> Submit RSVP</button>
+            </span>
+    	</form>
+    </div>
+{% else %}
+	<div class="note">
+	Your search yielded no results
+	</div>
+{% endif %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'polls/bootstrap/css/creative.css' %}" />
 
-<h1>{{ question.question_text }}</h1>
+{% block javascript %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 
-<ul>
-	{% for choice in question.choice_set.all %}
-		<li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
-	{% endfor %}
-</ul>
+<script type="text/javascript">
 
-<a href="{% url 'polls:detail' pk=question.id %}">Vote again?</a>
+    $(document).ready(function() {
+        $('#submitRsvpButton').click(function(event){
+            event.preventDefault();
+            $('#submitButtonIcon').addClass('fa fa-spinner fa-spin');
+            submit_rsvp();
+        });
+    });
+
+    function submit_rsvp() {
+        var form = $('#rsvp-form');
+        $.ajax( {
+          type: "POST",
+          url: form.attr( 'action' ),
+          data: form.serialize(),
+          success: function( data ) {
+            if(data.status == 1) {
+                $('#talk').html(data);
+            } else {
+                $('#talk').html(data);
+                $('#rsvpReminder').html('');
+
+            }
+          }
+        } );
+    };
+
+</script>
+
+{% endblock %}

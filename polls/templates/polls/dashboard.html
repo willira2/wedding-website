@@ -1,0 +1,135 @@
+{% extends 'polls/base.html' %}
+{% block content %}
+    <div class="container" id="main">
+        <h1>Dashboard</h1>
+        <div class="panel-group" id="help-accordion-1">
+            <div class="panel panel-default panel-help">
+                <div class="panel-heading p-2" id="headingOne">
+                    <a data-toggle="collapse" data-parent="#help-accordion-1" href="#guestsAttending" aria-expanded="true" aria-controls="guestsAttending" class="accordion-toggle collapsed">
+                      <h5 class="panel-title"><strong>Guests Attending</strong></h5>
+                    </a>
+                    <h6>Total attending: {{ attending_guests|length }} </h6>
+                </div>
+            </div>
+                <div id="guestsAttending" class="panel-collapse collapse" aria-labelledby="headingOne">
+                    {% regroup attending_guests by party__name as party_list %}
+                    {% for party in party_list %}
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th><strong>{{ party.grouper }} : {{ party.list.0.party__invite_code }}</strong></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for item in party.list %}
+                            <tr>
+                                <td>{{ item.first_name }} {{ item.last_name }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    {% endfor %}
+                </div>
+        </div>
+
+        <div class="panel-group" id="help-accordion-2">
+            <div class="panel panel-default panel-help">
+                <div class="panel-heading p-2" id="headingTwo">
+                    <a data-toggle="collapse" data-parent="#help-accordion-2" href="#guestsNotAttending" aria-expanded="true" aria-controls="guestsAttending" class="accordion-toggle collapsed">
+                      <h5 class="panel-title"><strong>Guests Not Coming</strong></h5>
+                    </a>
+                    <h6>Total attending: {{ not_coming_guests|length }} </h6>
+                </div>
+            </div>
+                <div id="guestsNotAttending" class="panel-collapse collapse" aria-labelledby="headingTwo">
+                    {% regroup not_coming_guests by party__name as party_list %}
+                    {% for party in party_list %}
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th><strong>{{ party.grouper }} : {{ party.list.0.party__invite_code }}</strong></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for item in party.list %}
+                            <tr>
+                                <td>{{ item.first_name }} {{ item.last_name }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    {% endfor %}
+                </div>
+        </div>
+
+        <div class="panel-group" id="help-accordion-3">
+            <div class="panel panel-default panel-help">
+                <div class="panel-heading p-2" id="headingThree">
+                    <a data-toggle="collapse" data-parent="#help-accordion-3" href="#guestsNotResponded" aria-expanded="true" aria-controls="guestsAttending" class="accordion-toggle collapsed">
+                      <h5 class="panel-title"><strong>Guests Not Responded</strong></h5>
+                    </a>
+                    <h6>Total attending: {{ not_responded_guests|length }} </h6>
+                </div>
+            </div>
+                <div id="guestsNotResponded" class="panel-collapse collapse" aria-labelledby="headingThree">
+                    {% regroup not_responded_guests by party__name as party_list %}
+                    {% for party in party_list %}
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th><strong> {{forloop.counter}}. {{ party.grouper }} : {{ party.list.0.party__invite_code }}</strong></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for item in party.list %}
+                            <tr>
+                                <td>{{ item.first_name }} {{ item.last_name }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    {% endfor %}
+                </div>
+        </div>
+
+        <!--<h2><strong>Guests Not Attending</strong></h2>-->
+        <!--<h4>Total not attending: {{ not_attending_guests|length }} </h4>-->
+        <!--{% regroup not_coming_guests by party__name as party_list %}-->
+        <!--{% for party in party_list %}-->
+        <!--<table class="table table-striped">-->
+        <!--    <thead>-->
+        <!--        <tr>-->
+        <!--            <th><strong>{{ party.grouper }} : {{ party.list.0.party__invite_code }}</strong></th>-->
+        <!--        </tr>-->
+        <!--    </thead>-->
+        <!--    <tbody>-->
+        <!--    {% for item in party.list %}-->
+        <!--        <tr>-->
+        <!--            <td>{{ item.first_name }} {{ item.last_name }}</td>-->
+        <!--        </tr>-->
+        <!--    {% endfor %}-->
+        <!--    </tbody>-->
+        <!--</table>-->
+        <!--{% endfor %}-->
+
+        <!--<h2><strong>Guests Not Responded</strong></h2>-->
+        <!--<h4>Total not responded: {{ not_responded_guests|length }} </h4>-->
+        <!--{% regroup not_responded_guests by party__name as party_list %}-->
+        <!--{% for party in party_list %}-->
+        <!--<table class="table table-striped">-->
+        <!--    <thead>-->
+        <!--        <tr>-->
+        <!--            <th><strong> {{forloop.counter}}. {{ party.grouper }} : {{ party.list.0.party__invite_code }}</strong></th>-->
+        <!--        </tr>-->
+        <!--    </thead>-->
+        <!--    <tbody>-->
+        <!--    {% for item in party.list %}-->
+        <!--        <tr>-->
+        <!--            <td>{{ item.first_name }} {{ item.last_name }}</td>-->
+        <!--        </tr>-->
+        <!--    {% endfor %}-->
+        <!--    </tbody>-->
+        <!--</table>-->
+        <!--{% endfor %}-->
+    </div>
+{% endblock %}

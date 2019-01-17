@@ -25,7 +25,14 @@ SECRET_KEY = '_d!ww!x#-0*oz@5#bq$*+d=ar*=^=b&q)-mbobb0u3r#)5tq(#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [u'www.rachelandjimmy.us']
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'rjwed19@gmail.com'
+EMAIL_HOST_PASSWORD = 'xSN6w2YuRe7qnmt'
 
 
 # Application definition
@@ -76,8 +83,11 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'rawillia90$wedding',
+        'USER': 'rawillia90',
+        'PASSWORD': 'pv8ggvRLjLNUW3N',
+        'HOST': 'rawillia90.mysql.pythonanywhere-services.com',
     }
 }
 
@@ -117,7 +127,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
-
+STATIC_ROOT = "/home/rawillia90/wedding-website/polls/static"
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
@@ -125,6 +135,6 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    'home/Documents/my_project/projDir/mysite/polls/static/polls',
+    "/home/rawillia90/wedding-website/polls/static/polls",
 )
 

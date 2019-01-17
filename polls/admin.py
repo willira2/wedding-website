@@ -1,10 +1,13 @@
 from django.contrib import admin
 
-from .models import Question
 from .models import Party
 from .models import Invitation
 
-admin.site.register(Question)
+class InvitationInline(admin.TabularInline):
+    model = Invitation
+    fields = ('first_name', 'last_name', 'status')
+    readonly_fields = ('first_name', 'last_name')
+
 admin.site.register(Party)
 admin.site.register(Invitation)
 
