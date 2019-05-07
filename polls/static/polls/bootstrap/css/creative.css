@@ -1,3 +1,5 @@
+/*/polls/static/polls/bootstrap/css/*/
+
 body,
 html {
   width: 100%;
@@ -11,7 +13,7 @@ body {
 hr {
   max-width: 50px;
   border-width: 3px;
-  border-color: #38d786;
+  border-color: #8CC084;
 }
 
 hr.light {
@@ -44,6 +46,16 @@ h6 {
 
 .bg-dark {
   background-color: #8CC084 !important;
+}
+
+.countdown-content {
+    background-color: #8CC084;
+    background-image: linear-gradient(to right, #8cc084, #83bc85, #7bb885, #72b486, #6ab086, #63ac87, #5ca888, #56a488, #4fa088, #499b88, #449788, #3f9287);
+}
+
+.bg-gradient-top {
+    background-color: #8CC084;
+    background-image: linear-gradient(to bottom, #8cc084, #83bc85, #7bb885, #72b486, #6ab086, #63ac87, #5ca888, #56a488, #4fa088, #499b88, #449788, #3f9287);
 }
 
 .text-faded {
@@ -92,7 +104,7 @@ img::-moz-selection {
 #mainNav .navbar-brand {
   font-weight: 700;
   text-transform: uppercase;
-  color: #38d786;
+  color: rgba(255, 255, 255, 0.7);
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 
@@ -105,7 +117,7 @@ img::-moz-selection {
   font-size: .9rem;
   font-weight: 700;
   text-transform: uppercase;
-  color: #38d786;
+  color: #8cc084;
 }
 
 #mainNav .navbar-nav > li.nav-item > a.nav-link:hover,
@@ -122,6 +134,23 @@ img::-moz-selection {
 #mainNav .navbar-nav > li.nav-item > a.nav-link.active:hover,
 #mainNav .navbar-nav > li.nav-item > a.nav-link:focus.active:hover {
   background-color: transparent;
+}
+
+#nav-tabContent {
+    border-left: 1px solid #dee2e6;
+    border-right: 1px solid #dee2e6;
+    border-bottom: 1px solid #dee2e6;
+    padding: 10px;
+    border-radius: 0 0 4px 4px;
+}
+
+.nav-tabs {
+    margin-bottom: 0;
+
+}
+
+.hr-large {
+    max-width: 100px;
 }
 
 @media (min-width: 992px) {
@@ -166,8 +195,18 @@ img::-moz-selection {
   }
 }
 
+@media (max-width: 991px) {
+    #googleMap {
+      visibility: hidden;
+    }
+
+    #event-bottom {
+      visibility: hidden;
+    }
+}
+
 #rsvp-header{
-  padding-top: 3rem;
+  padding-top: 4rem;
   height: 20vh;
   background-color: #fff
 }
@@ -175,7 +214,7 @@ img::-moz-selection {
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 56px);
-  background-image: url("../img/racheljimmy1.jpg");
+  background-image: url("../img/racheljimmy2.jpg");
   background-position: center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -191,7 +230,7 @@ header.masthead h1 {
     -1px -1px 0 #888,
     1px -1px 0 #888,
     -1px 1px 0 #888,
-    1px 1px 0 #888;  
+    1px 1px 0 #888;
 }
 
 header.masthead p {
@@ -243,6 +282,7 @@ header.masthead p {
 
 #event-bottom{
   height: 16vh;
+  display: block;
 }
 
 .service-box {
@@ -265,7 +305,7 @@ header.masthead p {
   text-align: center;
   opacity: 0;
   color: #fff;
-  background: #38d786;
+  background: #8cc084;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   transition: all 0.2s;
@@ -354,8 +394,41 @@ header.masthead p {
   background-color: #BAD9B5 !important;
 }
 
-.btn-primary:active, .btn-primary:focus {
+.btn-info:active, .btn-info:focus {
   box-shadow: 0 0 0 0.2rem rgba(240, 95, 64, 0.5) !important;
+}
+
+.btn-light {
+  background-color: ##f8f9fa;
+  border-color: #8CC084 !important;
+  color: #8CC084;
+}
+
+.btn-light:hover, .btn-light:focus, .btn-light:active {
+  color: #8CC084;
+  background-color: #dae0e5 !important;
+}
+
+.btn-light:not(:disabled):not(.disabled).active, .btn-light:not(:disabled):not(.disabled):active, .show>.btn-light.dropdown-toggle {
+   color: #8CC084;
+}
+
+/*.btn-light:active, .btn-light:focus {*/
+/*  box-shadow: 0 0 0 0.2rem rgba(240, 95, 64, 0.5) !important;*/
+/*}*/
+
+.btn.btn-lg.btn-outline-secondary {
+    color: rgba(255, 255, 255, 0.7);
+    background-color: #6c757d;
+    border-color: #6c757d;
+    border-radius: 0rem .25rem .25rem 0rem;
+}
+
+.btn.btn-lg.btn-outline-secondary:active, .btn.btn-lg.btn-outline-secondary:focus, .btn.btn-lg.btn-outline-secondary:hover  {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+    border-radius: 0rem .25rem .25rem 0rem;
 }
 
 .tab-content.panels-faq {
@@ -388,7 +461,7 @@ header.masthead p {
     border-top-right-radius: 2px;
     border-top-left-radius: 2px;
     color: rgba(0,0,0,.87);
-    h2 {      
+    h2 {
       margin: 0;
       padding: 14px 0 14px;
       font-size: 18px;
@@ -414,17 +487,18 @@ header.masthead p {
   }
 }
 
-.panel-heading .accordion-toggle h4:after {
+.panel-heading .accordion-toggle h5:after {
     /* symbol for "opening" panels */
-    font-family: "FontAwesome";  
-    content: "\f056";    
-    float: right;                
+    font-family: "FontAwesome";
+    content: "\f056";
+    float: right;
     overflow: no-display;
 }
-.panel-heading .accordion-toggle.collapsed h4:after {
+.panel-heading .accordion-toggle.collapsed h5:after {
     /* symbol for "collapsed" panels */
-    content: "\f055";    
+    content: "\f055";
 }
 a.accordion-toggle{
     text-decoration: none;
 }
+

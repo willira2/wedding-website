@@ -17,11 +17,11 @@
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#event">Event</a>
             </li>
-            <!-- <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#travel">Travel</a>
-            </li> -->
+             <li class="nav-item">
+                  <a class="nav-link js-scroll-trigger" href="#travel">Travel</a>
+            </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#faq">FAQ</a>
+              <a class="nav-link js-scroll-trigger" href="#faq">Details</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="{% url 'polls:rsvp' %}">RSVP</a>
@@ -48,16 +48,16 @@
         <div class="row align-items-left no-gutters bg-primary" id="event-top">
           <div class="col-xl-6 col-lg-6 mx-auto p-5">
             <div class="featured-text text-center">
-              <h3 class="text-primary mb-4">Ceremony</h3>
-              <hr class="my-4">
+              <h3 class="text-primary">Ceremony</h3>
+              <hr class="hr-large">
               <h5 class="text-primary">April 27th, 2019</h5>
               <h5 class="text-primary">12:00 PM Eastern Standard Time</h5>
               <p class="text-primary">
                 <a class="subtle-link" href="https://goo.gl/maps/d3vdE1htMJy" target="_blank"> Lookout Mountain Club
                 <br>1201 Fleetwood Drive<br>Lookout Mountain, GA 30750</a>
               </p>
-              <p class="text-primary pt-5">Lunch reception to follow</p>
-              <p class="text-primary pb-5">
+              <p class="text-primary">Lunch reception to follow</p>
+              <p class="text-primary">
                 <a class="nav-link js-scroll-trigger" href="#faq">more details</a>
               </p>
               <a href="/rsvp/"><button class="btn btn-primary btn-lg">rsvp</button></a>
@@ -67,7 +67,7 @@
             <div id="googleMap" style="width:100%;height:100%;" class="map-height"> </div>
           </div>
         </div>
-        <div class="row bg-dark p-5" id="event-bottom">
+        <div class="row countdown-content p-5" id="event-bottom">
           <div class="col-xl-12 col-lg-12">
             <h2 class="featured-text text-center text-white mx-auto" id="demo">
             </h2>
@@ -76,17 +76,138 @@
       </div>
     </section>
 
+
+<section id="travel" class="p-5">
+	<div class="container">
+		<h2 class="section-title mb-4 text-center">Travel</h2>
+		<hr class="hr-large my-4">
+		<div class="row">
+			<div class="col-lg-12 ">
+				<ul class="nav nav-tabs mx-auto">
+                  <li class="nav-item">
+                    <a class="nav-link px-5 active" data-toggle="tab" href="#stay">Places to Stay</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link px-5" data-toggle="tab" href="#see">Things to Do</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link px-5" data-toggle="tab" href="#eat">Food to Eat</a>
+                  </li>
+                </ul>
+				<div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+                  <div class="tab-pane container active" id="stay">
+                    <h4>Downtown:</h4>
+                    <p>A downtown hotel would be most convenient for people who want to attend the afterparty. Downtown to the venue is a 15 to 20 minute drive. There are many more downtown hotels than just those listed here.</p>
+                    <ul>
+                        <li><a href="https://www.chattanooganhotel.com/" target="_blank">The Chattanoogan</a></li>
+                        <li><a href="https://www.choochoo.com" target="_blank">Chattanooga Choo Choo Hotel</a></li>
+                        <li><a href="https://www.ihg.com/holidayinn/hotels/us/en/chattanooga/chadt/hoteldetail" target="_blank">Holiday Inn and Suites Chattanooga Downtown</a></li>
+                    </ul>
+
+                    <h4>Outside Downtown:</h4>
+                    <p>There are several hotels (more than just these listed here) near the base of the mountain that are less expensive than the downtown hotels. From this area to the venue is a 15 minute drive and to downtown takes 10 minutes.</p>
+                    <ul>
+                        <li><a href="https://www.ihg.com/holidayinnexpress/hotels/us/en/chattanooga/chami/hoteldetail" target="_blank">Holiday Inn Express and Suites Chattanooga - Lookout Mountain</a></li>
+                        <li><a href="https://hamptoninn3.hilton.com/en/hotels/tennessee/hampton-inn-chattanooga-west-lookout-mountain-CHALMHX/index.html" target="_blank">Hampton Inn Chattanooga West - Lookout Mountain</a></li>
+                        <li><a href="http://www.laquintachattanoogalookoutmountain.com/" target="_blank">La Quinta Inn and Suites</a></li>
+                    </ul>
+
+                    <h4>On the Mountain:</h4>
+                    <p>There are no hotels on Lookout Mountain, but there are a few B&B businesses. Obviously, these are closest to the venue.</p>
+                    <ul>
+                        <li><a href="https://www.gardenwalkinn.com/" target="_blank">Garden Walk Inn</a></li>
+                        <li><a href="https://www.stayatriverviewinn.com/" target="_blank">Riverview Inn</a></li>
+                        <li><a href="https://stayatchanticleer.com/" target="_blank">Chanticleer Inn Bed and Breakfast</a></li>
+                    </ul>
+
+                    <p><i>There are also AirBnBs in the area, including on Lookout Mountain.</i></p>
+
+
+                  </div>
+                  <div class="tab-pane container fade" id="see">
+                    <h4>Downtown:</h4>
+                    <ul>
+                        <li><a href="https://www.tnaqua.org/" target="_blank">Tennessee Aquarium</a> - It's like a zoo but for fish.</li>
+                        <li><a href="https://www.chattanoogafun.com/listing/walnut-street-pedestrian-bridge/2485/" target="_blank">Walnut Street Bridge</a> - Iconic blue pedestrian bridge that links downtown to the Northshore.</li>
+                        <li><a href="http://www.huntermuseum.org/" target="_blank">Hunter Museum of American Art</a> - American art from the Colonial period to today housed in an early 20th century mansion with a 1970's modern addition.</li>
+                        <li><a href="http://www.northshorechattanooga.com/" target="_blank">Northshore Neighborhood</a> - Eclectic neighborhood with shopping and dining on the other side of the river from downtown.️</li>
+                        <li><a href="https://www.chattanoogafun.com/blog/post/a-guide-to-chattanoogas-riverwalk/" target="_blank">Chattanooga Riverwalk</a> - Access everything above via the Riverwalk.</li>
+                    </ul>
+
+                    <h4>On the Mountain:</h4>
+                    <ul>
+                        <li><a href="http://www.rubyfalls.com/" target="_blank">Ruby Falls</a> - Underground waterfall and caves inside Lookout Mountain.</li>
+                        <li><a href="http://www.ridetheincline.com/" target="_blank">Incline Railway</a> - One mile railway track built in 1895 that takes you straight up the side of Lookout Mountain at a 72.7% incline. Jimmy refuses to do it. </li>
+                        <li><a href="https://www.nps.gov/chch/learn/lookout-mountain.htm" target="_blank">Point Park</a> - 10 acre memorial park on the end of Lookout that overlooks Lookout Mountain Battlefield and Chattanooga.</li>
+                        <li><a href="https://reflectionriding.org/www" target="_blank">Reflection Riding Arboretum and Nature Center</a> - Free admission to trails, gardens, and a native animal exhibit</li>
+                    </ul>
+
+                  </div>
+                  <div class="tab-pane container fade" id="eat">
+                    <p>Chattanooga is the birthplace of both the Moon Pie and Krystal's. But in case that's not enough for you, here are some suggestions.</p>
+                    <ul>
+                        <li><a href="https://lupi.com/" target="_blank">Lupi's Pizza</a> - Best pizza in town, don't let anyone try to convince you otherwise.</li>
+                        <li><a href="http://www.mojoburrito.com/" target="_blank">Mojo Burrito</a> - Quick and casual Southwestern done right.</li>
+                        <li><a href="http://www.publichousechattanooga.com/restaurants-chattanooga" target="_blank">Public House Restaurant</a> - Great lunch place that does lighter Southern cuisine (oxymoron?).</li>
+                        <li><a href="https://terminalbrewhouse.com/" target="_blank">Terminal Brewhouse</a> - Great for lunch or dinner, with beer brewed on site in a historic Chattanooga landmark.️</li>
+                        <li><a href="https://www.primochattanooga.com/" target="_blank">Il Primo</a> - Excellent italian food in the relaxed Northshore neighborhood.️</li>
+                    </ul>
+                  </div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</section>
+
     <section class="p-5" id="faq">
       <div class="container">
         <div class="row">
           <div class="col-md-12 mb-3">
             <div class="text-center">
-              <h2 class="panel-title">more details</h2>
+              <h2 class="panel-title">More Details</h2>
+              <hr class="hr-large my-4">
             </div>
           </div>
 
         <div class="col-md-10 mx-auto">
           <div class="panel-group" id="help-accordion-1">
+             <div class="panel panel-default panel-help">
+              <div class="panel-heading p-2" id="headingZero">
+                <a data-toggle="collapse" data-parent="#help-accordion-0" href="#faq0" aria-expanded="true" aria-controls="faq0" class="accordion-toggle collapsed">
+                  <h5 class="panel-title">Just give me addresses and times for wedding, rehearsal dinner, and brunch.</h5>
+                </a>
+              </div>
+              <div id="faq0" class="panel-collapse collapse" aria-labelledby="headingZero">
+                <div class="panel-body p-4">
+                    <h5>Rehearsal dinner at 6:30 on Friday:</h5>
+                    <p>Manker Patten Tennis Center<br>
+                    100 Douglas Street<br>
+                    Chattanooga, TN 37403</p>
+                    <p><a class="link" href="https://goo.gl/maps/eAqMNjnt3Bz6PD7e8" target="_blank">Open Manker Patten Tennis Center in Google Maps</a></p>
+                    <hr>
+                    <h5>Wedding and Ceremony at 12 on Saturday:</h5>
+                    <p>Lookout Mountain Club<br>
+                    1201 Fleetwood Drive<br>
+                    Lookout Mountain, GA 30750</p>
+                    <p><a class="link" href="https://goo.gl/maps/d3vdE1htMJy" target="_blank">Open Lookout Mountain Club in Google Maps</a></p>
+                    <hr>
+                    <h5>After party at 8 on Saturday: </h5>
+                    <p>State of Confusion<br>
+                    301 East Main Street<br>
+                    Chattanooga, TN 37408<br>
+                    <p><a class="link" href="https://goo.gl/maps/drvvZS1nwTreo7PD8" target="_blank">Open State of Confusion in Google Maps</a></p>
+                    <hr>
+                    <h5>Brunch at 11:30 on Sunday:</h5>
+                    <p>Miller and Ann Epps<br>
+                    112 South Bragg Avenue<br>
+                    Lookout Mountain, TN 37350</p>
+                    <p><a class="link" href="https://goo.gl/maps/qPM8LEbLBAbBttsb9" target="_blank">Open the Epps' house in Google Maps</a></p>
+                    <hr>
+                  </div>
+              </div>
+             </div>
+
             <div class="panel panel-default panel-help">
               <div class="panel-heading p-2" id="headingOne">
                 <a data-toggle="collapse" data-parent="#help-accordion-1" href="#faq1" aria-expanded="true" aria-controls="faq1" class="accordion-toggle collapsed">
@@ -95,8 +216,8 @@
               </div>
               <div id="faq1" class="panel-collapse collapse" aria-labelledby="headingOne">
                 <div class="panel-body p-4">
-                  <p>Yes, there are two! The reception will be from 1pm to about 4pm. That evening, we have a casual afterparty planned downtown (location TBD). No RSVP necessary. We'll be there starting around 8pm until Rachel either falls asleep or passes out. Feel free to pop in for a drink or two or stay a while and get weird.</p>
-                  <p>Sunday morning, Jimmy's family will be throwing a brunch where y'all are welcome to stop by before heading out of town. More details to follow.</p>
+                  <p>Yep! All are welcome to the rehearsal dinner on Friday night at 6:30 at Manker Patten Tennis Center. After the wedding, we have a casual afterparty planned downtown at <a href="https://www.soconfusion.com/" target="_blank">State of Confusion</a>. No RSVP necessary. We'll be there starting around from 8pm until. Feel free to pop in for a drink or two or stay a while and get weird.</p>
+                  <p>Sunday morning, Jimmy's family will be throwing a brunch at his parents' house where y'all are welcome to stop by before heading out of town.</p>
                 </div>
               </div>
               </div>
@@ -110,7 +231,7 @@
               <div id="faq2" class="panel-collapse collapse" aria-labelledby="headingTwo">
                 <div class="panel-body p-4">
                   <p>Ceremony begins at 12pm Eastern Time. We suggest arriving at least twenty minutes beforehand in order to have time to park and find a seat. Ceremony will take about 20 to 25 minutes, after which y'all are invited to the reception area inside the Fairyland Club.</p>
-                  <p>There will be a bar area inside, a bluegrass band providing some tunes, and lawn games outside below the porch area. We'll be done by 4:30. That night we're having an afterparty downtown at (location TBD) where you can let your hair down until the wee hours of the morning..</p>
+                  <p>There will be a bar area inside, a bluegrass band providing some tunes, and lawn games outside below the porch area. We'll be done by 4:00. That night we're having an afterparty downtown at State of Confusion where you can let your hair down until the wee hours of the morning..</p>
                 </div>
               </div>
             </div>
@@ -138,7 +259,8 @@
               </div>
               <div id="faq4" class="panel-collapse collapse" aria-labelledby="headingTwo">
                 <div class="panel-body p-4">
-                  <p>Yes, there's parking right in front of the building, and overflow parking a little down the street. You won't need to worry about finding a spot to park.</p>
+                  <p><del>Yes, there's ample parking right in front of the building. You won't need to worry about finding a spot to park.</del></p>
+                  <p>update: There is valet parking at the venue. Jimmy and Rachel have covered this for y'all, including gratuity.</p>
                 </div>
               </div>
             </div>
@@ -152,6 +274,7 @@
               <div id="faq5" class="panel-collapse collapse" aria-labelledby="headingTwo">
                 <div class="panel-body p-4">
                   <p>Rachel can tell you that you don't actually say "fairy land" like "fairy tales." It's more like "fair-uh land" with the emphasis on the first syllable. She knows this because she pronounced it the wrong way for a long time before anyone corrected her. Just like when she lived in Horry County for a year before anyone told her the "h" in "Horry" is silent.</p>
+                  <p>UPDATE: Jimmy's Uncle Savage has provided some helpful feedback on this important issue. "Fairyland Club" is one word better pronounced this way: "Fairlunclub" </p>
                 </div>
               </div>
             </div>
@@ -164,7 +287,7 @@
               </div>
               <div id="faq7" class="panel-collapse collapse" aria-labelledby="headingTwo">
                 <div class="panel-body p-4">
-                  <p>We do not have a registry.</p>
+                  <p>We do not have a registry and are not asking for gifts.</p>
                 </div>
               </div>
             </div>
@@ -204,7 +327,7 @@
               </div>
               <div id="faq10" class="panel-collapse collapse" aria-labelledby="headingTwo">
                 <div class="panel-body p-4">
-                  <p>Due to venue capacity we can’t host any additional guests that didn’t receive formal invitations.</p>
+                  <p>Due to venue capacity we can’t host any additional guests that are not included in the RSVP form.</p>
                 </div>
               </div>
             </div>
@@ -230,7 +353,7 @@
               </div>
               <div id="faq12" class="panel-collapse collapse" aria-labelledby="headingTwo">
                 <div class="panel-body p-4">
-                  <p>Rachel, because she's insane and decided to learn a brand new framework to make the wedding website.</p>
+                  <p>Rachel, because she's insane and decided making a wedding website would be a good project to learn a new framework.</p>
                   <p>If you come across any weird errors or have trouble with the RSVP, email her at rjwed19@gmail.com</p>
                 </div>
               </div>
@@ -242,7 +365,7 @@
      </div>
   </section>
 
-      <section id="rsvp" class="bg-dark text-white p-5">
+      <section id="rsvp" class="bg-gradient-top text-white p-5">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto text-center mb-5">
@@ -302,8 +425,8 @@
             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
             // Display the result in the element with id="demo"
-            $("#demo").html(days + "d " + hours + "h "
-            + minutes + "m " + seconds + "s ");
+            $("#demo").html(days + ":" + hours + ":"
+            + minutes + ":" + seconds);
 
             // If the count down is finished, write some text
             if (distance < 0) {
